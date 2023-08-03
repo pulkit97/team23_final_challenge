@@ -33,6 +33,9 @@ public class Trade {
         this.settlementDate = settlementDate;
     }
 
+    public Trade() {
+    }
+
     public int getId() {
         return id;
     }
