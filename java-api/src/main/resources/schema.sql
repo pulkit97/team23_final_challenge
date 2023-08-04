@@ -10,6 +10,11 @@ id INT PRIMARY KEY NOT NULL UNIQUE,
 name VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE counterparty (
+id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL
+);
+
 CREATE TABLE security (
 id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 isin VARCHAR(100) NOT NULL,
@@ -21,13 +26,10 @@ type VARCHAR(100) NOT NULL,
 face_value FLOAT NOT NULL,
 currency VARCHAR(20) NOT NULL,
 status VARCHAR(50) NOT NULL,
-trading_book_id INT NOT NULL  UNIQUE,
-FOREIGN KEY (trading_book_id) REFERENCES book(id)
-);
-
-CREATE TABLE counterparty (
-id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-name VARCHAR(100) NOT NULL
+trading_book_id INT NOT NULL,
+counterparty_id int NOT NULL,
+FOREIGN KEY (trading_book_id) REFERENCES book(id),
+FOREIGN KEY (counterparty_id) REFERENCES counterparty(id)
 );
 
 CREATE TABLE users (

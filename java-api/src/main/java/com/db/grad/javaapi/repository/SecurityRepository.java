@@ -1,6 +1,7 @@
 package com.db.grad.javaapi.repository;
 
 import com.db.grad.javaapi.model.Book;
+import com.db.grad.javaapi.model.CounterParty;
 import com.db.grad.javaapi.model.Security;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -25,6 +26,7 @@ public interface SecurityRepository extends JpaRepository<Security, Integer> {
     List<Security> findSecuritiesForUserBooks(@Param("userMail") String userMail);
     @Query("SELECT s FROM Security s WHERE s.status = 'active'")
     List<Security> getActiveBonds();
+
 
     @Query(value = "SELECT * FROM security AS s WHERE s.maturity_date BETWEEN '0005-08-21' AND '0005-08-25'", nativeQuery = true)
     List<Security> getBondsForNextFiveDays();

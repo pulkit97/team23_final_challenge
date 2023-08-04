@@ -1,8 +1,10 @@
 package com.db.grad.javaapi.service;
 
 import com.db.grad.javaapi.dto.BondTransactionDTO;
+import com.db.grad.javaapi.model.CounterParty;
 import com.db.grad.javaapi.model.Security;
 import com.db.grad.javaapi.model.Trade;
+import com.db.grad.javaapi.repository.CounterPartyRepository;
 import com.db.grad.javaapi.repository.SecurityRepository;
 import com.db.grad.javaapi.repository.TradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ public class SecurityService {
 
     @Autowired
     private TradeRepository tradeRepository;
+
+    @Autowired
+    private CounterPartyRepository counterPartyRepository;
 
     public List<Security> getAllSecuritiesForUserBooks(String userMail) {
         return securityRepository.findSecuritiesForUserBooks(userMail);
@@ -41,6 +46,7 @@ public class SecurityService {
 
         List<Trade> transactions = tradeRepository.getAllTransactions();
         List<Security> securities = securityRepository.getActiveBonds();
+        List<CounterParty> counterparties = counterPartyRepository.getCounterParty();
         ArrayList<BondTransactionDTO> bondTransactionAll = new ArrayList<>();
 
         for (Security security : securities) {

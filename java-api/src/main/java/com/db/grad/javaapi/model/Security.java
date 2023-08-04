@@ -23,6 +23,7 @@ public class Security {
     private float faceValue;
     private String currency;
     private String status;
+    private String bondHolders;
 
     public Security(int id, String isin, String cusip, String issuerName, LocalDateTime maturityDate, float coupon, String type, float faceValue, String currency, String status) {
         this.id = id;
@@ -118,6 +119,14 @@ public class Security {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getBondHolders() {
+        return bondHolders;
+    }
+
+    public void setBondHolders(String bondHolders) {
+        this.bondHolders = bondHolders;
     }
 
     @Override
