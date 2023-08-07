@@ -21,6 +21,15 @@ public class SecurityService {
     @Autowired
     private TradeRepository tradeRepository;
 
+    public SecurityService(SecurityRepository securityRepository, TradeRepository tradeRepository) {
+        this.securityRepository = securityRepository;
+        this.tradeRepository = tradeRepository;
+    }
+
+    public SecurityService() {
+    }
+
+
     public List<Security> getAllSecuritiesForUserBooks(String userMail) {
         return securityRepository.findSecuritiesForUserBooks(userMail);
     }

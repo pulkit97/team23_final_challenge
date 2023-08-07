@@ -31,6 +31,20 @@ public class Trade {
     public Trade() {
     }
 
+    public Trade(int id, String currency, String status, float unitPrice, int quantity, String buySell, LocalDateTime tradeDate, LocalDateTime settlementDate, int book_id, int security_id, int counterparty_id) {
+        this.id = id;
+        this.currency = currency;
+        this.status = status;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
+        this.buySell = buySell;
+        this.tradeDate = tradeDate;
+        this.settlementDate = settlementDate;
+        this.book_id = book_id;
+        this.security_id = security_id;
+        this.counterparty_id = counterparty_id;
+    }
+
     public int getId() {
         return id;
     }
