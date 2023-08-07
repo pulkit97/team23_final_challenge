@@ -26,9 +26,9 @@ public interface SecurityRepository extends JpaRepository<Security, Integer> {
     @Query("SELECT s FROM Security s WHERE s.status = 'active'")
     List<Security> getActiveBonds();
 
-    @Query(value = "SELECT * FROM security AS s WHERE s.maturity_date BETWEEN '0005-08-21' AND '0005-08-25'", nativeQuery = true)
+    @Query(value = "SELECT * FROM security AS s WHERE s.maturity_date BETWEEN '2021-08-05' AND '2021-08-09'", nativeQuery = true)
     List<Security> getBondsForNextFiveDays();
 
-    @Query(value = "SELECT * FROM security AS s WHERE s.maturity_date BETWEEN '0030-07-21' AND '0030-07-25'", nativeQuery = true)
+    @Query(value = "SELECT * FROM security AS s WHERE s.maturity_date BETWEEN '2021-08-01' AND '2021-08-05'", nativeQuery = true)
     List<Security> getBondsForPreviousFiveDays();
 }

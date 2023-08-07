@@ -1,21 +1,18 @@
 package com.db.grad.javaapi.service;
-
 import com.db.grad.javaapi.dto.BondTransactionDTO;
 import com.db.grad.javaapi.model.Security;
 import com.db.grad.javaapi.model.Trade;
-import com.db.grad.javaapi.repository.SecurityRepository;
 import com.db.grad.javaapi.repository.SecurityRepositoryStub;
 import com.db.grad.javaapi.repository.TradeRepositoryStub;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SecurityServiceTest {
+public class SecurityServiceTransactionTest {
 
     private SecurityRepositoryStub securityRepo = new SecurityRepositoryStub();
     private TradeRepositoryStub tradesRepo = new TradeRepositoryStub();
@@ -97,3 +94,4 @@ public class SecurityServiceTest {
     }
 
 }
+

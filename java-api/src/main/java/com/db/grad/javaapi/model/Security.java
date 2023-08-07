@@ -23,6 +23,8 @@ public class Security {
     private float faceValue;
     private String currency;
     private String status;
+    @Column(name = "bond_holder")
+    private String bondHolder;
 
     public Security(int id, String isin, String cusip, String issuerName, LocalDateTime maturityDate, float coupon, String type, float faceValue, String currency, String status) {
         this.id = id;
@@ -134,5 +136,13 @@ public class Security {
                 ", currency='" + currency + '\'' +
                 ", status='" + status + '\'' +
                 '}';
+    }
+
+    public String getBondHolder() {
+        return bondHolder;
+    }
+
+    public void setBondHolder(String bondHolder) {
+        this.bondHolder = bondHolder;
     }
 }
