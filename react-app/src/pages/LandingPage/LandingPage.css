@@ -1,18 +1,56 @@
-/* .table {
-    max-width: 800px;
-    margin: auto;
-    background-color: #fafafa;
-}
+/* Stiluri pentru întregul tabel */
+.TableContainer {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .Table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .TableHeadCell {
+    font-weight: bold;
+    padding: 12px;
+    background-color:white; /* Culoare de fundal pentru celulele antetului tabelului */
+    color: #fff; /* Culoare text pentru celulele antetului tabelului */
+  }
+  
+  .TableRowOdd {
+    background-color: #f1f1f1; /* Culoare de fundal pentru rândurile impare */
+  }
+  
+  .TableRowEven {
+    background-color: #fff; /* Culoare de fundal pentru rândurile pare */
+  }
+  
+  .TableCell {
+    padding: 12px;
+    font-family: "Roboto", sans-serif; /* Fontul Roboto, implicit în Material-UI */
+    font-size: 1rem; /* Dimensiunea fontului */
+    font-weight: normal; /* Textul nu va fi bold */
+  }
+  
+  .TableCellString {
+    color: #333; /* Culoare text pentru date de tip șir (string) */
+  }
+  
+  .TableCellNumber {
+    color: #007bff; /* Culoare text pentru date de tip număr */
+  }
+  
+  .TableCellBoolean {
+    color: #28a745; /* Culoare text pentru date de tip boolean */
+  }
+  .ISINLink {
+    text-decoration: none; /* Elimină sublinierea */
+    cursor: pointer; /* Transformă cursorul în pointer la hover */
+    color: inherit;
+  }
 
-.header {
-    background-color: #3f51b5;
-    color: #fff;
+.TableHead {
+font-weight: bold;
+    padding: 12px;
+    background-color:rgba(128, 128, 128, 0.068); /* Culoare de fundal pentru celulele antetului tabelului */
+    color: #fff; /* Culoare text pentru celulele antetului tabelului */
 }
-
-.row:nth-of-type(odd) {
-    background-color: #fff;
-}
-
-.row:nth-of-type(even) {
-    background-color: #eee;
-} */

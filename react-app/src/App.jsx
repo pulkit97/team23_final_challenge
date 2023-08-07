@@ -8,6 +8,7 @@ import React, { useState, useEffect } from "react";
 import UserBonds from "./pages/UserBondsPage/UserBonds";
 import { Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import "./App.css"
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

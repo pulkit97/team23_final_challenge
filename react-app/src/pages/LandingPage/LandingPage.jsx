@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { TablePagination } from "@mui/material";
-import "./LandingPage.css";
+import "./LandingPage.css"
 import * as React from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
@@ -64,31 +64,34 @@ function Row(props) {
   
   return (
     <React.Fragment>
-      <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
+      <TableRow
+       className={row.id % 2 === 0 ? "TableRowEven" : "TableRowOdd"}
+       sx={{ "& > *": { borderBottom: "unset" } }}>
         <TableCell>
         {showCollapse && (
           <IconButton
             aria-label="expand row"
             size="small"
             onClick={() => setOpen(!open)}
+            className="ExpandButton"
           >
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
            )}
         </TableCell>
-        <TableCell component="th" scope="row">
+        <TableCell className={`${row.id % 2 === 0 ? "TableCellString" : "TableCellNumber"} ${"TableHeadCell"}`}>
         <span style={{cursor: 'pointer', textDecoration: 'underline', color: 'blue'}} onClick={() => handleISINClick(row.ISIN)}>
           {row.ISIN}
         </span>
       </TableCell>
-        <TableCell>{row.CUSIP}</TableCell>
-        <TableCell>{row.Issue_Name}</TableCell>
-        <TableCell>{row.Maturity_Date}</TableCell>
-        <TableCell>{row.Coupon}</TableCell>
-        <TableCell>{row.Type}</TableCell>
-        <TableCell>{row.Face_Value}</TableCell>
-        <TableCell>{row.Currency}</TableCell>
-        <TableCell>{row.Status}</TableCell>
+      <TableCell className={`${row.id % 2 === 0 ? "TableCellString" : "TableCellString"} ${"TableHeadCell"}`}>{row.CUSIP}</TableCell>
+        <TableCell className={`${row.id % 2 === 0 ? "TableCellString" : "TableCellString"} ${"TableHeadCell"}`}>{row.Issue_Name}</TableCell>
+        <TableCell className={`${row.id % 2 === 0 ? "TableCellString" : "TableCellString"} ${"TableHeadCell"}`}>{row.Maturity_Date}</TableCell>
+        <TableCell className={`${row.id % 2 === 0 ? "TableCellString" : "TableCellNumber"} ${"TableHeadCell"}`}>{row.Coupon}</TableCell>
+        <TableCell className={`${row.id % 2 === 0 ? "TableCellString" : "TableCellString"} ${"TableHeadCell"}`}>{row.Type}</TableCell>
+        <TableCell className={`${row.id % 2 === 0 ? "TableCellNumber" : "TableCellNumber"} ${"TableHeadCell"}`}>{row.Face_Value}</TableCell>
+        <TableCell className={`${row.id % 2 === 0 ? "TableCellString" : "TableCellString"} ${"TableHeadCell"}`}>{row.Currency}</TableCell>
+        <TableCell className={`${row.id % 2 === 0 ? "TableCellBoolean" : "TableCellBoolean"} ${"TableHeadCell"}`}>{row.Status}</TableCell>
       </TableRow>
       {showCollapse && (
         <TableRow>
@@ -242,18 +245,18 @@ const LandingPage = ({ setIsLoggedIn }) => {
       <NavBar setIsLoggedIn={setIsLoggedIn} />
       <TableContainer component={Paper}>
         <Table aria-label="collapsible table">
-          <TableHead>
+          <TableHead className="">
             <TableRow>
               <TableCell />
-              <TableCell>ISIN</TableCell>
-              <TableCell>CUSIP</TableCell>
-              <TableCell>Issue Name</TableCell>
-              <TableCell>Maturity Date</TableCell>
-              <TableCell>Coupon</TableCell>
-              <TableCell>Type</TableCell>
-              <TableCell>Face Value</TableCell>
-              <TableCell>Currency</TableCell>
-              <TableCell>Status</TableCell>
+              <TableCell style={{ backgroundColor: "#8080800e" }}>ISIN</TableCell>
+    <TableCell style={{ backgroundColor: "#8080800e" }}>CUSIP</TableCell>
+    <TableCell style={{ backgroundColor: "#8080800e" }}>Issue Name</TableCell>
+    <TableCell style={{ backgroundColor: "#8080800e" }}>Maturity Date</TableCell>
+    <TableCell style={{ backgroundColor: "#8080800e" }}>Coupon</TableCell>
+    <TableCell style={{ backgroundColor: "#8080800e" }}>Type</TableCell>
+    <TableCell style={{ backgroundColor: "#8080800e" }}>Face Value</TableCell>
+    <TableCell style={{ backgroundColor: "#8080800e" }}>Currency</TableCell>
+    <TableCell style={{ backgroundColor: "#8080800e" }}>Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

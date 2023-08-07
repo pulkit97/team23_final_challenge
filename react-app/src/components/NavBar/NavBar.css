@@ -1,21 +1,60 @@
-/* Centrarea Navbar-ului pe ecran */
-.appBar {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    padding: 10px 0;
-  }
-  
-  /* Stilurile pentru butoanele din Navbar */
-  .linkButton {
-    color: #fff;
-    margin: 0 10px;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-  }
-  
-  .linkButton:hover {
-    background-color: #555;
-  }
+/* Stiluri generale pentru textul din Navbar */
+.AppBar {
+  background-color: #2196f3;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Stiluri pentru logo și text */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  color:blue;
+}
+.navLinks {
+  display: flex;
+  align-items: center;
+}
+
+.logoutButtonContainer {
+  margin-left: auto; /* Mută butonul de logout la sfârșitul Navbarului */
+}
+.logoImage {
+  width: 40px;
+  height: auto;
+  margin-bottom: 5px;
+  margin-right:10px;
+}
+
+.logoText {
+  font-family: "Montserrat", sans-serif; /* Fontul Montserrat importat din Google Fonts */
+  font-size: 1.2rem; /* Dimensiunea fontului pentru textul "DB App" */
+  font-weight: bold; /* Text bold */
+  color: #fff; /* Culoarea textului */
+}
+
+/* Stiluri pentru butoanele din Navbar */
+.linkButton {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fontul Roboto, implicit în Material-UI */
+  font-size: 1rem; /* Dimensiunea fontului pentru butoane */
+  font-weight: bold; /* Text bold */
+  text-transform: none; /* Dezactivează transformarea textului în majuscule */
+  color: #fff; /* Culoarea textului pentru butoane */
+  padding: 10px 15px; /* Spațiere în jurul butonului */
+}
+
+.linkButton:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.linkButton.logoutButton {
+  background-color:blue;
+}
+
+.linkButton.logoutButton:hover {
+  background-color: gray;
+}

@@ -113,7 +113,8 @@ const Dashboard = ({ setIsLoggedIn }) => {
             const date = new Date(dateString);
             return (
               <Grid item xs={2} key={index} className="grid-content">
-                <Card onClick={() => handleCardClick(dateString, bonds)}>
+                <Card onClick={() => handleCardClick(dateString, bonds)}
+                sx={{cursor:"pointer"}}>
                   <CardHeader
                     title={date.toLocaleDateString("en-US", {
                       weekday: "long",
