@@ -68,6 +68,7 @@ function Row(props) {
        className={row.id % 2 === 0 ? "TableRowEven" : "TableRowOdd"}
        sx={{ "& > *": { borderBottom: "unset" } }}>
         <TableCell>
+          
         {showCollapse && (
           <IconButton
             aria-label="expand row"

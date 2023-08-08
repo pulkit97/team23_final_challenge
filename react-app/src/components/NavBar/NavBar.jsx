@@ -20,7 +20,7 @@ const NavBar = ({  setIsLoggedIn }) => {
     localStorage.removeItem("loggedInUser");
     
     // Set the loggedIn state to false
-    setIsLoggedIn(false);
+    setIsLoggedIn?.(false);
   };
   
 
@@ -71,6 +71,7 @@ const NavBar = ({  setIsLoggedIn }) => {
             color="inherit"
             component={Link}
             onClick={handleLogout}
+            to="/login"
             className="linkButton logoutButton"
       sx={{buttonStyles, color:'white'}}
     >
